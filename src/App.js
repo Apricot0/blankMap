@@ -40,8 +40,8 @@ import IconBanner from './components/IconBanner';
     const location = useLocation();
     const showAppBanner = ['/Home','/home', '/create',"/detail","/profile","/profile/my-maps"
     ,"/profile/message-center","/profile/personal-information"
-    ,"/edit","/edit-heat","/regional-edit","/search"];
-    const notShowAppBanner = ['/login','/register','/forgot','/sign-out','/Login','/'];
+    ,"/edit","/edit-heat","/regional-edit","/search", '/'];
+    const notShowAppBanner = ['/login','/register','/forgot','/sign-out','/Login'];
     console.log(location.pathname);
     const shouldShowAppBanner = !notShowAppBanner.includes(location.pathname);
   
@@ -49,8 +49,8 @@ import IconBanner from './components/IconBanner';
       <>
         {shouldShowAppBanner && <AppBanner />}
         <Routes>
-            <Route index element={<MainPage />} />
-            <Route path="/main" element={<MainPage />} />
+            <Route index element={<HomeScreen />} />
+            <Route path="/main" element={<HomeScreen />} />
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/register" element={<RegisterScreen />} />
             <Route path="/home" element={<HomeScreen />} />
